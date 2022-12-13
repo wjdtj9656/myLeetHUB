@@ -4,7 +4,6 @@
  * @return {number[]}
  */
 var findAnagrams = function(s, p) {
-    p = p.split('').sort().join('');
     let [left,right] = [0,0];
     const len = s.length;
     const sMap = new Map();
