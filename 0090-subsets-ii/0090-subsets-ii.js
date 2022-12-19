@@ -9,21 +9,13 @@ var subsetsWithDup = function(nums) {
     nums.sort((a,b)=>a-b);
     const subset = (index,arr) =>{
         if(index === nums.length){
-            let arr = [];
-            for(let i=0; i<nums.length; i++){
-                if(visit.has(i)){
-                    arr.push(nums[i])
-                }
-            }
-            if(visit2.has(`${[...arr]}`)) return;
-            visit2.add(`${[...arr]}`)
-            result.push(arr)
+            if(visit.has(`${[...arr]}`)) return;
+            visit.add(`${[...arr]}`);
+            result.push([...arr])
             return;
         }
-        visit.add(index);
-        subset(index+1);
-        visit.delete(index);
-        subset(index+1);
+        subset(index+1,[...arr,nums[index]]);
+        subset(index+1,[...arr]);
     }
     subset(0,[])
     return result;
