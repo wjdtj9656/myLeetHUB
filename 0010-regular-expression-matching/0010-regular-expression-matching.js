@@ -6,11 +6,8 @@
 var isMatch = function(s, p) {
     const sLen = s.length;
     const pLen = p.length;
-    const map = new Map();
     
     const search = (index1, index2) =>{
-        const key = `${index1}:${index2}`;
-        if(map.has(key)) return map.get(key);
         let result;
         if(index1 > s.length) return false;
         if(index1 === sLen && index2 === pLen) return true;
@@ -28,7 +25,6 @@ var isMatch = function(s, p) {
             }
             else result = false;
         }
-        map.set(key,result);
         return result;
     }
     
