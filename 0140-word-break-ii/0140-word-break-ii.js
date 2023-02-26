@@ -10,7 +10,6 @@ var wordBreak = function(s, wordDict) {
             if(str.startsWith(word)){
                 let next = str.slice(word.length);
                 let paths = search(next);
-                
                 if(!next.length && !paths.length) result.push(word);
                 result.push(...paths.map(rest => word +" "+ rest));
             }
