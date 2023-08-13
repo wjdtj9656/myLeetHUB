@@ -3,7 +3,6 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    console.log(nums);
     const map = new Map();
     for(let i=0; i<nums.length; i++){
         if(map.get(nums[i]) === 2){
