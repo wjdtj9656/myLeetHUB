@@ -25,6 +25,5 @@ var largestWordCount = function(messages, senders) {
         }
         return b[1] - a[1];
     })
-    console.log(result)
     return result[0][0];
 };
