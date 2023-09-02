@@ -2,15 +2,10 @@
  * @param {number} n
  * @return {number[]}
  */
-var countBits = function(n) {
-    const answer = [];
-    for(let i=0; i<=n; i++){
-        let str = i.toString(2);
-        let cnt = 0;
-        for(let j=0; j<str.length; j++){
-            if(str[j] === "1") cnt++;
-        }
-        answer.push(cnt);
+var countBits = function countBits(n) {
+    const ans = new Array(n + 1).fill(0);
+    for (let i = 1; i <= n; i++) {
+        ans[i] = ans[i >> 1] + (i & 1);
     }
-    return answer;
-};
+    return ans;
+}
