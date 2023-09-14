@@ -3,54 +3,47 @@
  * @return {string[]}
  */
 function findItinerary(tickets) {
-  const flightMap = new Map();
-  const visitBitmap = new Map();
-  let flights = 0;
-  let result = null;
+  const map = new Map();
+  const visit = new Map();
 
-  for (const ticket of tickets) {
-    const [origin, dest] = ticket;
-    if (flightMap.has(origin)) {
-      flightMap.get(origin).push(dest);
-    } else {
-      flightMap.set(origin, [dest]);
+  for(let i=0; i<tickets.length; i++){
+    if(map.has(tickets[i][0])){
+      map.get(tickets[i][0]).push(tickets[i][1]);
+    }
+    else{
+      map.set(tickets[i][0],[tickets[i][1]]);
     }
   }
-
-  for (const [origin, destinations] of flightMap.entries()) {
-    destinations.sort();
-    visitBitmap.set(origin, new Array(destinations.length).fill(false));
+  for(let [origin, dest] of map.entries()){
+    dest.sort();
+    visit.set(origin,new Array(dest.length).fill(false));
   }
 
-  flights = tickets.length;
-  const route = ['JFK'];
+  let result;
+  let flight = tickets.length;
 
-  function backtracking(origin, route) {
-    if (route.length === flights + 1) {
+  const backtracking = (origin, route) =>{
+    if(route.length === flight+1){
       result = [...route];
       return true;
     }
 
-    if (!flightMap.has(origin)) return false;
+    if(!visit.has(origin)) return false;
 
-    const bitmap = visitBitmap.get(origin);
-
-    for (let i = 0; i < flightMap.get(origin).length; i++) {
-      const dest = flightMap.get(origin)[i];
-      if (!bitmap[i]) {
-        bitmap[i] = true;
+    const nowVisit = visit.get(origin);
+    for(let i=0; i<map.get(origin).length; i++){
+      const dest = map.get(origin)[i];
+      if(!nowVisit[i]){
+        nowVisit[i] = true;
         route.push(dest);
-        const ret = backtracking(dest, route);
+        let res = backtracking(dest,route);
         route.pop();
-        bitmap[i] = false;
-
-        if (ret) return true;
+        nowVisit[i] = false;
+        if(res) return true;
       }
     }
-
     return false;
   }
-
-  backtracking('JFK', route);
+  backtracking('JFK',['JFK']);
   return result;
 }
