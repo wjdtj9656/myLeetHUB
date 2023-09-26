@@ -7,7 +7,6 @@ var removeDuplicateLetters = function(s) {
     for(let i=0; i<s.length; i++){
         map.set(s[i],(map.get(s[i]) || 0)+1);
     }
-    console.log(map)
     let pos = 0;
     for(let i=0; i<s.length; i++){
         map.set(s[i],(map.get(s[i])-1));
