@@ -17,7 +17,7 @@ MyHashMap.prototype.put = function(key, value) {
  * @return {number}
  */
 MyHashMap.prototype.get = function(key) {
-    return this.map.get(key) != undefined ? this.map.get(key) : -1;
+    return this.map.get(key) == undefined? -1 : this.map.get(key);
 };
 
 /** 
