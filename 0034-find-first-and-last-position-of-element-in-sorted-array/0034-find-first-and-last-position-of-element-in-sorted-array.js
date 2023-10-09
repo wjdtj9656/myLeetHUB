@@ -15,7 +15,6 @@ var searchRange = function(nums, target) {
             left = mid+1;
         }
     }
-    console.log(left,right)
     if(nums[left] !== target) return [-1,-1];
     for(let i=left; i<nums.length; i++){
         if(nums[i] !== target) return[left,i-1];
