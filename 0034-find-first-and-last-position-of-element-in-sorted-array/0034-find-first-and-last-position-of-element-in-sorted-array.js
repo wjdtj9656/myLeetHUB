@@ -15,9 +15,19 @@ var searchRange = function(nums, target) {
             left = mid+1;
         }
     }
-    if(nums[left] !== target) return [-1,-1];
-    for(let i=left; i<nums.length; i++){
-        if(nums[i] !== target) return[left,i-1];
+    let answer1 = left;
+    left = 0;
+    right = nums.length;
+    while(left < right){
+        let mid = (left + right) >> 1;
+        if(nums[mid] > target){
+            right = mid;
+        }
+        else if(nums[mid] <= target){
+            left = mid+1;
+        }
     }
-    return [left,nums.length-1];
+    let answer2 = left;
+    if(nums[answer1] !== target) return [-1,-1];
+    return [answer1, answer2-1];
 };
