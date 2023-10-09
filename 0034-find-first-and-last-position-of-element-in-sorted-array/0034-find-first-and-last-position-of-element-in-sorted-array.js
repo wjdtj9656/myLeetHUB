@@ -4,12 +4,21 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    const index =[];
-    for(let i=0; i<nums.length; i++){
-        if(nums[i] === target){
-            index.push(i);
+    let left = 0;
+    let right = nums.length;
+    while(left < right){
+        let mid = (left + right) >> 1;
+        if(nums[mid] >= target){
+            right = mid;
+        }
+        else if(nums[mid] < target){
+            left = mid+1;
         }
     }
-    if(index.length === 0) return [-1,-1];
-    return [index[0],index[index.length-1]];
+    console.log(left,right)
+    if(nums[left] !== target) return [-1,-1];
+    for(let i=left; i<nums.length; i++){
+        if(nums[i] !== target) return[left,i-1];
+    }
+    return [left,nums.length-1];
 };
