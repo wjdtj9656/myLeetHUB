@@ -46,6 +46,5 @@ var shortestDistance = function(grid) {
             }
         }
     }
-    console.log(result);
     return res == Infinity? -1:res+1;
 };
