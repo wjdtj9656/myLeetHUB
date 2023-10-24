@@ -1,10 +1,22 @@
-var searchMatrix = function(matrix, target) {
-const m = matrix.length;
-const n = matrix[0].length;
-for(let i=0; i<m; i++){
-    for(let j=0; j<n; j++){
-        if(matrix[i][j] === target) return true;
-    }
-}
-return false;
+const searchMatrix = (matrix, target) => {
+    if (matrix.length === 0) return false;
+
+    const dfs = (i, j) => {
+        if (i >= matrix.length || j >= matrix[i].length || status === true || matrix[i][j] === Number.MAX_VALUE) {
+            return;
+        }
+
+        if (matrix[i][j] === target) {
+            status = true;
+            return;
+        }
+
+        matrix[i][j] = Number.MAX_VALUE;
+        dfs(i + 1, j);
+        dfs(i, j + 1);
+    };
+
+    let status = false;
+    dfs(0, 0);
+    return status;
 };
