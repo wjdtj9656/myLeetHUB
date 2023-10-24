@@ -1,22 +1,19 @@
-const searchMatrix = (matrix, target) => {
-    if (matrix.length === 0) return false;
 
-    const dfs = (i, j) => {
-        if (i >= matrix.length || j >= matrix[i].length || status === true || matrix[i][j] === Number.MAX_VALUE) {
-            return;
-        }
-
-        if (matrix[i][j] === target) {
-            status = true;
-            return;
-        }
-
-        matrix[i][j] = Number.MAX_VALUE;
-        dfs(i + 1, j);
-        dfs(i, j + 1);
-    };
-
+var searchMatrix = function(matrix, target) {
+    
+    const m = matrix.length;
+    const n = matrix[0].length;
     let status = false;
-    dfs(0, 0);
-    return status;
+    const dfs = (x,y) =>{
+        if(x < 0 || y < 0 || x >= m || y >= n ||matrix[x][y] == Infinity) return false;
+        if(matrix[x][y] > target) return false;
+        if(matrix[x][y] == target) {
+            return true;
+        }
+        matrix[x][y] = Infinity;
+        if(dfs(x, y+1)) return true;
+        if(dfs(x+1, y)) return true;
+        return false;
+    }
+    return dfs(0,0);
 };
