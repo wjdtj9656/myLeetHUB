@@ -3,7 +3,10 @@
  */
 var TicTacToe = function(n) {
     this.n = n;
-    this.map = new Array(n).fill(0).map(v=>new Array(n).fill(0));
+    this.rows = new Array(n).fill(0);
+    this.cols = new Array(n).fill(0);
+    this.diagonal = 0;
+    this.antiDiagonal = 0;
 };
 
 /** 
@@ -13,31 +16,11 @@ var TicTacToe = function(n) {
  * @return {number}
  */
 TicTacToe.prototype.move = function(row, col, player) {
-    this.map[row][col] = player;
-    let cnt = 0;
-    for(let i=0; i<this.n; i++){
-        if(this.map[row][i] == player) cnt++;
-    }
-    if(cnt ===  this.n) return player;
-    cnt = 0;
-
-    for(let i=0; i<this.n; i++){
-        if(this.map[i][col] == player) cnt++;
-    }
-    if(cnt === this.n) return player;
-    cnt = 0;
-
-    for(let i=0; i<this.n; i++){
-        if(this.map[i][i] == player) cnt++;
-    }
-    if(cnt === this.n) return player;
-    cnt = 0;
-
-    for(let i=0; i<this.n; i++){
-        if(this.map[i][this.n-i-1] == player) cnt++;
-    }
-    if(cnt === this.n) return player;
-    cnt = 0;
+    this.rows[row] += (player==1? 1:-1);
+    this.cols[col] += (player==1? 1:-1);
+    if(row == col) this.diagonal+= (player==1? 1:-1);
+    if(col == this.n-row-1) this.antiDiagonal += (player==1? 1:-1);
+    if(Math.abs(this.rows[row]) == this.n || Math.abs(this.cols[col]) == this.n || Math.abs(this.diagonal) == this.n || Math.abs(this.antiDiagonal) == this.n) return player;
     return 0;
 };
 
