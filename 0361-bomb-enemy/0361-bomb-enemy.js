@@ -3,30 +3,32 @@
  * @return {number}
  */
 var maxKilledEnemies = function(grid) {
-    const m = grid.length;
-    const n = grid[0].length;
+    if (!grid || grid.length === 0 || grid[0].length === 0) return 0;
 
+    let m = grid.length;
+    let n = grid[0].length;
+    let rowCnt = 0;
+    let colCnt = new Array(n).fill(0);
     let result = 0;
-    let cnt = 0;
-    const dx = [-1,0,1,0];
-    const dy = [0,-1,0,1];
-    const search = (x,y,d) =>{
-        if(x < 0 || y < 0 || x>=m || y>=n) return;
-        if(grid[x][y] == "W") return;
-        if(grid[x][y] == "E") cnt++;
-        search(x + dx[d], y+dy[d], d);
-    }
     for(let i=0; i<m; i++){
         for(let j=0; j<n; j++){
-            cnt = 0;
-            if(grid[i][j] == "0"){
-                search(i,j,0);
-                search(i,j,1);
-                search(i,j,2);
-                search(i,j,3);
+            if(j==0 || grid[i]?.[j-1] == "W"){
+            rowCnt = 0;
+                for(let k=j; k<n && grid[i][k] != "W"; k++){
+                    if(grid[i][k] == "E")rowCnt++;
+                }
             }
-        result = Math.max(result, cnt);
+            if(i==0 || grid[i-1][j] == "W"){
+                colCnt[j] = 0;
+                for(let k=i; k<m && grid[k][j] != "W"; k++){
+                    if(grid[k][j] == "E") colCnt[j]++;
+                }
+            }
+            if(grid[i][j] == "0"){
+                result = Math.max(result, colCnt[j]+rowCnt);
+            }
         }
     }
+
     return result;
 };
