@@ -2,31 +2,23 @@
  * @param {character[][]} matrix
  * @return {number}
  */
+
 var maximalSquare = function(matrix) {
-    const m = matrix.length;
-    const n = matrix[0].length;
-    const sumArr = new Array(m).fill(0).map(v=>new Array(n).fill(0));
-    const visit = new Set();
-    const small = m>n? n:m;
-    for(let i=0; i<m; i++){
-        for(let j=0; j<n; j++){
-            sumArr[i][j] = Number(matrix[i][j]) + (Number(sumArr[i-1]?.[j]) || 0) + (Number(sumArr[i][j-1]) || 0) - (Number(sumArr[i-1]?.[j-1]) || 0); 
-        }
-    }
-    let result = 0;
-    const search = (num) =>{
-        for(let i=num-1; i<m; i++){
-            for(let j=num-1; j<n; j++){
-                let sum = sumArr[i][j] - (sumArr[i-num]?.[j] || 0) - (sumArr[i]?.[j-num] || 0) + (sumArr[i-num]?.[j-num] || 0);
-                if(sum == num*num) {
-                    result = Math.max(result, sum);
-                    return;
-                }
+
+    if (!matrix.length) return 0;
+
+    let dp = new Array(matrix.length+1).fill(0).map(()=>new Array(matrix[0].length+1).fill(0));
+
+    let max = 0;
+
+    for (let r=1;r<dp.length;r++) { 
+        for (let c=1;c<dp[0].length;c++) {
+
+            if (matrix[r-1][c-1]!=0) {
+                dp[r][c] = Math.min(dp[r][c-1], dp[r-1][c], dp[r-1][c-1])+1;
+                max = Math.max(dp[r][c], max);
             }
         }
     }
-    for(let i=1; i<=small; i++){
-        search(i);
-    }
-    return result;
+    return max**2;
 };
