@@ -6,6 +6,7 @@ var maximalSquare = function(matrix) {
     const m = matrix.length;
     const n = matrix[0].length;
     const sumArr = new Array(m).fill(0).map(v=>new Array(n).fill(0));
+    const visit = new Set();
     const small = m>n? n:m;
     for(let i=0; i<m; i++){
         for(let j=0; j<n; j++){
@@ -18,7 +19,8 @@ var maximalSquare = function(matrix) {
             for(let j=num-1; j<n; j++){
                 let sum = sumArr[i][j] - (sumArr[i-num]?.[j] || 0) - (sumArr[i]?.[j-num] || 0) + (sumArr[i-num]?.[j-num] || 0);
                 if(sum == num*num) {
-                    result = Math.max(result, sum); 
+                    result = Math.max(result, sum);
+                    return;
                 }
             }
         }
