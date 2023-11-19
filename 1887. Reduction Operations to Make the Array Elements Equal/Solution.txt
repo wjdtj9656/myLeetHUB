@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var reductionOperations = function(nums) {
+    const map = new Map();
+    for(let num of nums){
+        map.set(num, (map.get(num) || 0)+1);
+    }
+    let arr = [...map.keys()];
+    arr.sort((a,b)=>a-b);
+    let answer = 0;
+    while(arr.length !== 1){
+        let value = arr.pop();
+        let mapValue = map.get(value);
+        answer += mapValue;
+        map.set(arr[arr.length-1],(map.get(arr[arr.length-1]) + mapValue));
+    }
+    return answer;
+};
