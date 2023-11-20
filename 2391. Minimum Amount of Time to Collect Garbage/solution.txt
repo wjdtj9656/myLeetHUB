@@ -1,0 +1,38 @@
+/**
+ * @param {string[]} garbage
+ * @param {number[]} travel
+ * @return {number}
+ */
+var garbageCollection = function(garbage, travel) {
+    const n = garbage.length;
+    let res = 0;
+    for(let i=0; i<n-1; i++){
+        res += 3* travel[i];
+    }
+    for(let s of garbage){
+        res += s.length;
+    }
+    
+        for (let i = n - 1; i > 0; i--) {
+            if (!garbage[i].includes("G")) {
+                res -= travel[i - 1];
+            }
+            else break;
+        }
+
+        for (let i = n - 1; i > 0; i--) {
+            if (!garbage[i].includes("P")) {
+                res -= travel[i - 1];
+            }
+            else break;
+        }
+
+        for (let i = n - 1; i > 0; i--) {
+            if (!garbage[i].includes("M")) {
+                res -= travel[i - 1];
+            }
+            else break;
+        }
+
+        return res;
+};
