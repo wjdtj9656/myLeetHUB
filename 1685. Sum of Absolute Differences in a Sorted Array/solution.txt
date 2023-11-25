@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getSumAbsoluteDifferences = function(nums) {
+    const n = nums.length;
+    let left = 0, right = nums.reduce((acc, curr) => acc + curr, 0);
+    const ans = [];
+
+    let i = 0;
+    for (const x of nums) {
+        ans.push((2 * i - n) * x + left - right);
+        left += x;
+        right -= x;
+        i++;
+    }
+
+    return ans;
+};
