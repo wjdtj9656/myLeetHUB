@@ -1,0 +1,14 @@
+/* Write your PL/SQL query statement below */
+Select product_id, new_price as price
+from
+(Select t1.product_id,
+t1.new_price,
+row_number() over(partition by t1.product_id order by t1.change_date desc) rn
+from Products t1
+where change_date <= '2019-08-16'
+)where rn = 1
+union 
+select distinct t2.product_id, to_number('10') price 
+from Products t2
+where change_date > '2019-08-16'
+and t2.product_id not in (select distinct product_id from Products where change_date <= '2019-08-16')
