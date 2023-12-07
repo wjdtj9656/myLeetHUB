@@ -1,0 +1,14 @@
+/**
+ * @param {string} num
+ * @return {string}
+ */
+var largestOddNumber = function(num) {
+    if (parseInt(num.slice(-1)) % 2 === 1) return num;
+    let index = num.length - 1;
+    while (index >= 0) {
+        const n = parseInt(num[index]);
+        if (n % 2 === 1) return num.slice(0, index + 1);
+        index--;
+    }
+    return "";
+};
