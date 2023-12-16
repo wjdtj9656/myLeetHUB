@@ -3,19 +3,13 @@
  * @return {number}
  */
 var nthUglyNumber = function(n) {
-    const arr = [];
-    const set = new Set();
-    const go = (a,b,c,index) =>{
-        if(index > 30) return;
-        let sum = (2**a) * (3**b) * (5**c);
-        if(set.has(sum)) return;
-        arr.push(sum);
-        set.add(sum);
-        go(a+1,b,c,index+1);
-        go(a,b+1,c,index+1);
-        go(a,b,c+1,index+1);
+    let dp = [1]
+    let c2 = c3 = c5 = 0
+    for (let i = 1; i < n; i++) {
+        dp[i] = Math.min(2 * dp[c2], 3 * dp[c3], 5 * dp[c5])
+        if (2 * dp[c2] === dp[i]) c2++
+        if (3 * dp[c3] === dp[i]) c3++
+        if (5 * dp[c5] === dp[i]) c5++
     }
-    go(0,0,0,0);
-    arr.sort((a,b)=>a-b);
-    return arr[n-1];
+    return dp[n - 1]
 };
