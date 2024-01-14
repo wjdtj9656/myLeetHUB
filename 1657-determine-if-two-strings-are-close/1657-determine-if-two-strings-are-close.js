@@ -12,8 +12,6 @@ var closeStrings = function(word1, word2) {
     for(let i=0; i<word2.length; i++){
         map2.set(word2[i],(map2.get(word2[i]) || 0 )+1);
     }
-    console.log(map1);
-    console.log(map2);
     if(map1.size != map2.size) return false;
     for(let val of map1.keys()){
         if(!map2.has(val)){
