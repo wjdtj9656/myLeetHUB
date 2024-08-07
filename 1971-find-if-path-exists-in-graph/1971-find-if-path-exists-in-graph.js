@@ -6,24 +6,27 @@
  * @return {boolean}
  */
 var validPath = function(n, edges, source, destination) {
-    const arr = new Array(n);
-    for(let i=0; i<n; i++){
-        arr[i] = i;
+    const visit = new Array(n).fill(0);
+    const arr = new Array(n)
+    if(source == destination) return true;
+    for(let [s,e] of edges){
+        if(!arr[s]) arr[s] = []
+        if(!arr[e]) arr[e] = []
+        arr[s].push(e);
+        arr[e].push(s);
     }
-    const findParent = (value) =>{
-        if(arr[value] === value) return value;
-        return findParent(arr[value]);
+    q = [source];
+    while(q.length) {
+        let cx = q.shift();
+        if(!arr[cx]) continue;
+        for(let i=0; i<arr[cx].length; i++){
+            if(visit[arr[cx][i]] == 0){
+                q.push(arr[cx][i]);
+                visit[arr[cx][i]] = 1;
+                if(arr[cx][i] == destination) return true;
+            }
+        }
     }
-    const union = (value1, value2) =>{
-        let root1 = findParent(value1);
-        let root2 = findParent(value2);
-        if(root1 === root2) return true;
-        arr[root2] = root1;
-        return false;
-    }
-    for(let edge of edges){
-        union(edge[0],edge[1]);
-    }
-    if(findParent(arr[source]) === findParent(arr[destination])) return true;
+
     return false;
 };

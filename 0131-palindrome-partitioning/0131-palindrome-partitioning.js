@@ -3,20 +3,24 @@
  * @return {string[][]}
  */
 var partition = function(s) {
-    const isPalindrome = (str) => str === str.split('').reverse().join('');
-    const result = [];
-    const combination = (arr, index) =>{
-        if(index === s.length){
-            result.push(arr);
+    const output = [];
+    const part = [];
+    const isPalindrome = str => str === str.split('').reverse().join('');
+
+    const findP = (str, start, part, res) => {
+        if(start == str.length){
+            res.push([...part]);
             return;
         }
-        for(let i=index+1; i<=s.length; i++){
-            let target = s.slice(index, i);
+        for(let i=start+1; i<=str.length; i++){
+            const target = str.slice(start,i);
             if(isPalindrome(target)){
-                combination([...arr,target],i)
+                part.push(target);
+                findP(str,i,part,res);
+                part.pop();
             }
         }
     }
-    combination([],0);
-    return result;
+    findP(s,0,part,output);
+    return output
 };
