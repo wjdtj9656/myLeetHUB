@@ -5,29 +5,17 @@
  * @return {boolean}
  */
 var canMeasureWater = function(x, y, target) {
-    let a = 0;
-    let b = 0;
-    let res = false;
-    const dp = new Array(x+1).fill(Infinity).map(()=>new Array(y+1).fill(Infinity));
-    const search = (a,b,cnt) =>{
-        if(a == target || b == target || a+b==target){
-            console.log(a,b)
-            res = true;
-            return cnt;
+    if(target > x+y) return false;
+    if(target === 0) return true;
+
+    const gcd =(a,b)=>{
+        if(b>a){
+            [a,b] = [b,a];
         }
-        if(dp[a][b] < cnt){
-            return;
+        if(b==0){
+            return a;
         }
-        else{
-            dp[a][b] = cnt;
-        }
-        if(search(x,b,cnt+1))return true;
-        if(search(a,y,cnt+1)) return true;
-        if(search(0,b,cnt+1)) return true;
-        if(search(a,0,cnt+1)) return true;
-        if(search(Math.min(x,a+b),Math.max(0,b-(x-a)),cnt+1)) return true;
-        if(search(Math.max(0,a-(y-b)),Math.min(y,a+b),cnt+1)) return true;
+        return gcd(a%b,b);
     }
-    search(0,0,0);
-    return res;
+    return target % gcd(x,y) ===0;
 };
