@@ -3,13 +3,13 @@
  * @return {Function}
  */
 var compose = function(functions) {
-	let result = 0;
+    
     return function(x) {
-        result = x;
-        for(let i=functions.length-1; i>=0; i--){
-            result = functions[i](result);
+        while(functions.length > 0){
+            const a = functions.pop();
+            x = a(x);
         }
-        return result;
+        return x;
     }
 };
 
