@@ -1,17 +1,17 @@
 /**
  * @param {Function} fn
+ * @return {Function}
  */
 function memoize(fn) {
-    const map = new Map();
+    const a = {};
     return function(...args) {
-        const key = JSON.stringify(args);
-        if(map.has(key)){
-            return map.get(key);
+        if(a[args] == undefined) {
+            a[args] = fn(...args);
+            return a[args]
         }
-        const result = fn.apply(this, args);
-        map.set(key,result);
-        
-        return result;
+        else{
+            return a[args]
+        }
     }
 }
 
