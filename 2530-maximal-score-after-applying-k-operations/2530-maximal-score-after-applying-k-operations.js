@@ -39,25 +39,18 @@ class MaxHeap{
         this.heap.push(val);
         this.bubbleup();
     }
-bubbledown(){
-    let index = 1;
-    while(index * 2 < this.size()){
-        let left = index * 2;
-        let right = index * 2 + 1;
-        let largest = left;
-
-        if(right < this.size() && this.heap[right] > this.heap[left]){
-            largest = right;
-        }
-        if(this.heap[index] < this.heap[largest]){
-            this.swap(index, largest);
-            index = largest;
-        } else {
-            break;
+    bubbledown(){
+        let index = 1;
+        while(index * 2 < this.size()){
+            let left = index*2;
+            let right = index*2+1;
+            let big = right < this.size() && this.heap[left] < this.heap[right]? right:left;
+            if(this.heap[index] < this.heap[big]){
+                this.swap(big,index);
+                index = big;
+            }else break;
         }
     }
-}
-
     bubbleup(){
         let index = this.size()-1;
         while(index > 1){
