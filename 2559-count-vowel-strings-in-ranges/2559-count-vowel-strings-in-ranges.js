@@ -4,28 +4,28 @@
  * @return {number[]}
  */
 var vowelStrings = function(words, queries) {
-    const dp = new Array(words.length).fill(0);
-    const set = new Set(["a","e","i","o","u"]);
-    const result = [];
-    
-    //dp[0]값을 구해줘야해서 if문이 좀 나뉘었음
+    let sum = 0;
+    const arr = new Array(words.length).fill(0);
+    const isCheck = (word) =>{
+        if(word == 'a' || word == 'e' || word =='i' || word=='o' || word=='u')return true;
+        return false; 
+    }
     for(let i=0; i<words.length; i++){
-        if(set.has(words[i][0]) && set.has(words[i][words[i].length-1])){
-            if(i !== 0) dp[i] = dp[i-1] + 1;
-            else dp[i] = 1;
-        }
-        else{
-            if(i !== 0) dp[i] = dp[i-1];
-            else dp[i] = 0;
-        }
+        if (
+            isCheck(words[i][0]) && 
+            isCheck(words[i][words[i].length - 1])
+            ) {
+                sum++;
+            }
+
+        arr[i]=sum;
     }
-    //start-1이 0일떄는 dp[-1]을 참조하게 되므로 주의
-    for(let query of queries){
-        let [start, end] = query
-        start -= 1;
-        if(start<0) result.push(dp[end]);
-        else result.push(dp[end] - dp[start]);
+    const answer = [];
+    for(let i=0; i<queries.length; i++){
+        let s = queries[i][0];
+        let e = queries[i][1];
+        if(s-1 < 0) answer.push(arr[e]);
+        else answer.push(arr[e] - arr[s-1]);
     }
-    
-    return result;
+    return answer;
 };
