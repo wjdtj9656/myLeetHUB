@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-fish-in-a-grid/">2658. Maximum Number of Fish in a Grid</a></h2><h3>Medium</h3><hr><div><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>m x n</code>, where <code>(r, c)</code> represents:</p>
+<h2><a href="https://leetcode.com/problems/maximum-number-of-fish-in-a-grid">2658. Maximum Number of Fish in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>m x n</code>, where <code>(r, c)</code> represents:</p>
 
 <ul>
 	<li>A <strong>land</strong> cell if <code>grid[r][c] = 0</code>, or</li>
@@ -18,15 +18,17 @@
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2023/03/29/example.png" style="width: 241px; height: 161px;">
-<pre><strong>Input:</strong> grid = [[0,2,1,0],[4,0,0,3],[1,0,0,4],[0,3,2,0]]
+<img alt="" src="https://assets.leetcode.com/uploads/2023/03/29/example.png" style="width: 241px; height: 161px;" />
+<pre>
+<strong>Input:</strong> grid = [[0,2,1,0],[4,0,0,3],[1,0,0,4],[0,3,2,0]]
 <strong>Output:</strong> 7
 <strong>Explanation:</strong> The fisher can start at cell <code>(1,3)</code> and collect 3 fish, then move to cell <code>(2,3)</code>&nbsp;and collect 4 fish.
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2023/03/29/example2.png">
-<pre><strong>Input:</strong> grid = [[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]]
+<img alt="" src="https://assets.leetcode.com/uploads/2023/03/29/example2.png" />
+<pre>
+<strong>Input:</strong> grid = [[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]]
 <strong>Output:</strong> 1
 <strong>Explanation:</strong> The fisher can start at cells (0,0) or (3,3) and collect a single fish. 
 </pre>
@@ -40,4 +42,3 @@
 	<li><code>1 &lt;= m, n &lt;= 10</code></li>
 	<li><code>0 &lt;= grid[i][j] &lt;= 10</code></li>
 </ul>
-</div>
