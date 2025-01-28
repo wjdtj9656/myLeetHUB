@@ -3,29 +3,34 @@
  * @return {number}
  */
 var findMaxFish = function(grid) {
-    let n = grid.length;
-    let m = grid[0].length;
-    let dx = [-1,0,1,0];
-    let dy = [0,-1,0,1];
-
-    const dfs = (i,j) =>{
-        if(grid[i][j] == 0) return 0;
-        let sum = grid[i][j];
-        grid[i][j] = 0;
-        for(let a=0; a<4; a++){
-            let nx = i + dx[a];
-            let ny = j + dy[a];
-            if(nx<0 || ny<0 || nx>=n || ny>=m) continue;
-            sum += dfs(nx,ny);
+    const m = grid.length;
+    const n = grid[0].length;
+    let cnt = 0;
+    const dx = [-1,0,1,0];
+    const dy = [0,-1,0,1];
+    const visit = new Array(m).fill(false).map(()=> new Array(n).fill(false));
+    const bfs = (x,y) =>{
+        const q = [[x,y,grid[x][y]]];
+        visit[x][y] = true;
+        let sum = grid[x][y];
+        while(q.length){
+            const [cx,cy,cValue] = q.pop();
+            for(let i=0; i<4; i++){
+                let nx = cx + dx[i];
+                let ny = cy + dy[i];
+                if(nx < 0 || nx >= m || ny<0 || ny>=n || visit[nx][ny] || grid[nx][ny] == 0) continue;
+                visit[nx][ny] = true;
+                sum += grid[nx][ny];
+                q.push([nx,ny,cValue+grid[nx][ny]]);
+            }
         }
-        return sum;
+        cnt = Math.max(sum,cnt);
     }
-    let ans = 0;
-    for(let i=0; i<n; i++){
-        for(let j=0; j<m; j++){
-            ans = Math.max(ans, dfs(i,j));
+    for(let i=0; i<m; i++){
+        for(let j=0; j<n; j++){
+            if(grid[i][j] == 0 ) continue;
+            bfs(i,j);
         }
     }
-    return ans;
-    
+    return cnt;
 };
