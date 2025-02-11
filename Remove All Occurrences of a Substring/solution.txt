@@ -1,0 +1,9 @@
+var removeOccurrences = function(s, part) {
+	let len = part.length;
+    while(true){
+		let index = s.indexOf(part);
+		if(index < 0) break;
+		s = s.slice(0,index) + s.slice(index+len,s.length);
+	}
+	return s;
+};
