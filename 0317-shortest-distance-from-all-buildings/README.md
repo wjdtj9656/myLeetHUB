@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/shortest-distance-from-all-buildings">317. Shortest Distance from All Buildings</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> grid <code>grid</code> of values <code>0</code>, <code>1</code>, or <code>2</code>, where:</p>
+<h2><a href="https://leetcode.com/problems/shortest-distance-from-all-buildings/">317. Shortest Distance from All Buildings</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> grid <code>grid</code> of values <code>0</code>, <code>1</code>, or <code>2</code>, where:</p>
 
 <ul>
 	<li>each <code>0</code> marks <strong>an empty land</strong> that you can pass by freely,</li>
@@ -11,8 +11,6 @@
 <p>Return <em>the <strong>shortest travel distance</strong> for such a house</em>. If it is not possible to build such a house according to the above rules, return <code>-1</code>.</p>
 
 <p>The <strong>total travel distance</strong> is the sum of the distances between the houses of the friends and the meeting point.</p>
-
-<p>The distance is calculated using <a href="http://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan Distance</a>, where <code>distance(p1, p2) = |p2.x - p1.x| + |p2.y - p1.y|</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
