@@ -1,20 +1,44 @@
+/**
+ * @param {number[]} tops
+ * @param {number[]} bottoms
+ * @return {number}
+ */
 var minDominoRotations = function(tops, bottoms) {
+    const map = {};
     const n = tops.length;
-
-    const check = (target) => {
-        let rotateTop = 0, rotateBottom = 0;
-        for (let i = 0; i < n; i++) {
-            if (tops[i] !== target && bottoms[i] !== target) {
-                return Infinity;
-            } else if (tops[i] !== target) {
-                rotateTop++;
-            } else if (bottoms[i] !== target) {
-                rotateBottom++;
+    for(let i=0; i<n; i++){
+        map[tops[i]] = (map[tops[i]] || 0) + 1;
+    }
+    for(let i=0; i<n; i++){
+        map[bottoms[i]] = (map[bottoms[i]] || 0) + 1;
+    }
+    const arr = [];
+    for(let [key,value] of Object.entries(map)){
+        if(value >= n){
+            arr.push(key);
+        }
+    }
+    const ans = {};
+    let res = 10e9;
+    for(let num of arr){
+        let t = 0;
+        let b = 0;
+        for(let i=0; i<n; i++){
+            if(tops[i] != num){
+                t++;
+            }
+            if(bottoms[i] != num){
+                b++;
+            }
+            if(tops[i] == num || bottoms[i] == num){
+            }
+            else{
+                break;
+            }
+            if(i==n-1){
+                res = Math.min(res, t,b);
             }
         }
-        return Math.min(rotateTop, rotateBottom);
     }
-
-    let res = Math.min(check(tops[0]), check(bottoms[0]));
-    return res === Infinity ? -1 : res;
+    return res ==10e9? -1:res;
 };
