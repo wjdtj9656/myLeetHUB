@@ -1,20 +1,21 @@
+/**
+ * @param {number[][]} dominoes
+ * @return {number}
+ */
 var numEquivDominoPairs = function(dominoes) {
     const map = {};
+    const n = dominoes.length;
     let res = 0;
-    
-    for (const [a, b] of dominoes) {
-        const x = Math.min(a, b);
-        const y = Math.max(a, b);
-        const key = x * 10 + y; // 숫자 기반 키
-
-        map[key] = (map[key] || 0) + 1;
+    for(let i=0; i<n; i++){
+        let [a,b] = dominoes[i];
+        if(a > b) [a,b] = [b,a];
+        let key = a*10 + b;
+        map[key] = (map[key] || 0)+1; 
     }
-
-    for (const count of Object.values(map)) {
-        if (count > 1) {
-            res += (count * (count - 1)) / 2;
+    for(let [key,val] of Object.entries(map)){
+        if(val > 1){
+            res += Math.floor((val*(val-1))/2);
         }
     }
-
     return res;
 };
