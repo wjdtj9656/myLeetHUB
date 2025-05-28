@@ -1,0 +1,20 @@
+function distributeCandies(n, limit, minCandy) {
+    let cnt = 0;
+    const reducedLimit = limit - minCandy;
+    const remaining = n - 3 * minCandy;
+
+    if (remaining < 0) return 0;
+
+    for (let i = 0; i <= Math.min(reducedLimit, remaining); i++) {
+        let rem = remaining - i;
+
+        let minY = Math.max(0, rem - reducedLimit);
+        let maxY = Math.min(reducedLimit, rem);
+
+        if (minY <= maxY) {
+            cnt += maxY - minY + 1;
+        }
+    }
+
+    return cnt;
+}
