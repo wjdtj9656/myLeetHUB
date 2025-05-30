@@ -1,33 +1,31 @@
-/**
- * @param {number[]} edges
- * @param {number} node1
- * @param {number} node2
- * @return {number}
- */
-var closestMeetingNode = function(edges, node1, node2) {
-    if(node1 === node2) return node1;
-    let result = -1;
-    const map1 = new Map();
-    const map2 = new Map();
-    let cnt = 0;
-    while(!map1.has(node1) && node1 !== -1){
-        map1.set(node1,++cnt);
-        node1 = edges[node1];
+function closestMeetingNode(edges, node1, node2) {
+  const n = edges.length;
+  const dist1 = Array(n).fill(Infinity);
+  const dist2 = Array(n).fill(Infinity);
+
+  let cur = node1, d = 0;
+  while (cur !== -1 && dist1[cur] === Infinity) {
+    dist1[cur] = d++;
+    cur = edges[cur];
+  }
+
+  cur = node2; d = 0;
+  while (cur !== -1 && dist2[cur] === Infinity) {
+    dist2[cur] = d++;
+    cur = edges[cur];
+  }
+
+  let answer = -1;
+  let bestMaxDist = Infinity;
+  for (let i = 0; i < n; i++) {
+    if (dist1[i] < Infinity && dist2[i] < Infinity) {
+      const maxDist = Math.max(dist1[i], dist2[i]);
+      if (maxDist < bestMaxDist) {
+        bestMaxDist = maxDist;
+        answer = i;
+      }
     }
-    cnt = 0;
-    while(!map2.has(node2) && node2 !== -1){
-        map2.set(node2,++cnt);
-        node2 = edges[node2];
-    }
-    let max = 0;
-    let min = Infinity;
-    for(let i=0; i<edges.length; i++){
-        if(map1.get(i) === undefined &&  map2.get(i) === undefined) continue;
-        max = Math.max(map1.get(i),map2.get(i));
-        if(min > max){
-            min = max;
-            result = i;
-        }
-    }
-    return result;
-};
+  }
+
+  return answer;
+}
