@@ -1,0 +1,36 @@
+/**
+ * @param {number[]} nums
+ * @param {number} p
+ * @return {number}
+ */
+var minimizeMax = function(nums, p) {
+    nums.sort((a,b)=>a-b);
+    return binarySearch(nums, p)
+};
+
+const binarySearch = (nums, p) =>{
+    let left = 0;
+    let right = nums[nums.length-1] - nums[0];
+    while(left < right){
+        let mid = (left + right) >> 1;
+        if(canForm(nums, p, mid)){
+            right = mid;
+        }
+        else{
+            left = mid+1;
+        }
+    }
+    return left;
+}
+
+const canForm = (nums, p, mid) =>{
+    let cnt = 0;
+    for(let i=0; i<nums.length-1 && cnt < p;){
+        if(nums[i+1] - nums[i] <= mid){
+            cnt++;
+            i+=2;
+        }
+        else i++;
+    }
+    return cnt >= p;
+}
