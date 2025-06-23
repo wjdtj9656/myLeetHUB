@@ -1,0 +1,54 @@
+
+function kMirror(k, n) {
+  let count = 0;
+  let sum = 0;
+  let len = 1;
+
+  const genPalindromes = (length) => {
+    const res = [];
+    if (length === 1) {
+      for (let d = 1; d <= 9; d++) res.push(d);
+      return res;
+    }
+    const halfLen = Math.floor(length / 2);
+    const start = 10 ** (halfLen - 1);
+    const end = 10 ** halfLen - 1;
+
+    for (let half = start; half <= end; half++) {
+      const s = String(half);
+      const rev = s.split('').reverse().join('');
+      if (length % 2 === 0) {
+        res.push(parseInt(s + rev, 10));
+      } else {
+        for (let mid = 0; mid <= 9; mid++) {
+          res.push(parseInt(s + mid + rev, 10));
+        }
+      }
+    }
+    return res;
+  };
+
+  const toBaseK = (num, base) => {
+    let s = '';
+    while (num > 0) {
+      s = (num % base) + s;
+      num = Math.floor(num / base);
+    }
+    return s || '0';
+  };
+
+  while (count < n) {
+    for (const num of genPalindromes(len)) {
+      if (count >= n) break;
+      const ks = toBaseK(num, k);
+      const rev = ks.split('').reverse().join('');
+      if (ks === rev) {
+        sum += num;
+        count++;
+      }
+    }
+    len++;
+  }
+
+  return sum;
+}
