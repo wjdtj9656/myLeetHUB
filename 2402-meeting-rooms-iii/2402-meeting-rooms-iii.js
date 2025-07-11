@@ -3,42 +3,38 @@
  * @param {number[][]} meetings
  * @return {number}
  */
+
 var mostBooked = function(n, meetings) {
-    const room = [];
-    const cnt = [];
-    let answer = 0;
-    for(let i=0; i<n; i++){
-        room[i] = -1;
-        cnt[i] = 0;
-    }
-    meetings.sort((a,b)=>a[0] - b[0]);
-    for(let i=0; i<meetings.length; i++){
-        let start = meetings[i][0];
-        let end = meetings[i][1];
-        let earlyIndex = -1,earlyTime = Infinity, haveRoom = false;
-        for(let j=0; j<n; j++){
-            if(room[j] <= start){
-                haveRoom=true;
-                room[j] = end;
-                cnt[j]++;
+    let rooms_meetings_counter = new Array(n).fill(0);
+    let available_rooms = new Array(n).fill(-1);
+    meetings.sort((a, b) => a[0] - b[0]);
+
+    meetings.map((meeting) => {
+        let [start, end] = meeting;
+        let earliestRoomIdx = 0;
+        let earliestEndTime = Number.MAX_SAFE_INTEGER;
+
+        let isAvailableRoomExist = false;
+
+        for (let i = 0; i < n; i++) {
+            if (available_rooms[i] <= start) {
+                rooms_meetings_counter[i]++;
+                available_rooms[i] = end;
+                isAvailableRoomExist = true;
                 break;
             }
-            if(earlyTime > room[j]){
-                earlyTime = room[j];
-                earlyIndex = j;
+
+            if (available_rooms[i] < earliestEndTime) {
+                earliestEndTime = available_rooms[i];
+                earliestRoomIdx = i;
             }
         }
-        if(!haveRoom){
-            room[earlyIndex] += (end-start);
-            cnt[earlyIndex]++;
-        } 
-    }
-    let max = 0;
-    for(let i=0; i<n; i++){
-        if(max < cnt[i]){
-            max = cnt[i];
-            answer = i;
+
+        if (!isAvailableRoomExist) {
+            rooms_meetings_counter[earliestRoomIdx]++;
+            available_rooms[earliestRoomIdx] += end - start;
         }
-    }
-    return answer;
+    });
+
+    return rooms_meetings_counter.indexOf(Math.max(...rooms_meetings_counter));
 };
