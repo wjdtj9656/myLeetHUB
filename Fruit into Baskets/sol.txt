@@ -1,0 +1,46 @@
+var totalFruit = function(fruits) {
+    let left = 0;
+    let right = 0;
+    const n = fruits.length;
+    let basket1 = -1;
+    let basket2 = -1;
+    let cnt1 = 0;
+    let cnt2 = 0;
+    let result = 0;
+    while (right < n) {
+        if (basket1 === fruits[right]) {
+            cnt1++;
+            right++;
+        } else if (basket2 === fruits[right]) {
+            cnt2++;
+            right++;
+        } else if (basket1 === -1) {
+            basket1 = fruits[right];
+            cnt1++;
+            right++;
+        } else if (basket2 === -1) {
+            basket2 = fruits[right];
+            cnt2++;
+            right++;
+        } else {
+            while (cnt1 > 0 && cnt2 > 0) {
+                if (fruits[left] === basket1) {
+                    cnt1--;
+                } else {
+                    cnt2--;
+                }
+                left++;
+            }
+            if (cnt1 === 0) {
+                basket1 = fruits[right];
+                cnt1 = 1;
+            } else {
+                basket2 = fruits[right];
+                cnt2 = 1;
+            }
+            right++;
+        }
+        result = Math.max(result, cnt1 + cnt2);
+    }
+    return result;
+};
