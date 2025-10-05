@@ -1,42 +1,47 @@
-/**
- * @param {number[][]} heights
- * @return {number[][]}
- */
 var pacificAtlantic = function(heights) {
-    let [h,w] = [heights.length,heights[0].length];
-    let map = new Array(h).fill(0).map(()=>[]);
-    
-    let atlantic = [];
-    let pacific = [];
-    const result = [];
-    const dfs = (r,c,prev,ocean) =>{
-        if(r<0 || r>=h || c<0 || c>=w) return;
-        if(heights[r][c] < prev) return;
-        if(ocean[r][c]) return;
-        ocean[r][c] = true;
-        dfs(r+1,c,heights[r][c], ocean);
-        dfs(r-1,c,heights[r][c], ocean);
-        dfs(r,c+1,heights[r][c], ocean);
-        dfs(r,c-1,heights[r][c], ocean);
+  const m = heights.length, n = heights[0].length;
+  const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+
+  function bfs(starts) {
+    const vis = Array.from({ length: m }, () => Array(n).fill(false));
+    const q = [];
+    for (const [r, c] of starts) {
+      if (!vis[r][c]) { vis[r][c] = true; q.push([r, c]); }
     }
-    
-    for(let i=0; i<h; i++){
-        atlantic.push(new Array(w).fill(false));
-        pacific.push(new Array(w).fill(false));
-    }
-    
-    for(let c=0; c<w; c++){
-        dfs(0, c, -10e9, pacific);
-        dfs(h-1, c,-10e9, atlantic);
-    }
-    for(let r=0; r<h; r++){
-        dfs(r, 0, -10e9, pacific);
-        dfs(r, w-1,-10e9, atlantic);
-    }
-    for(let i=0; i<h; i++){
-        for(let j=0; j<w; j++){
-            if(atlantic[i][j] && pacific[i][j]) result.push([i,j]);
+    let i = 0;
+    while (i < q.length) {
+      const [r, c] = q[i++];
+      for (const [dr, dc] of dirs) {
+        const nr = r + dr, nc = c + dc;
+        if (nr < 0 || nr >= m || nc < 0 || nc >= n) continue;
+        if (vis[nr][nc]) continue;
+        if (heights[nr][nc] >= heights[r][c]) {
+          vis[nr][nc] = true;
+          q.push([nr, nc]);
         }
+      }
     }
-    return result;
+    return vis;
+  }
+
+  const pacStarts = [], atlStarts = [];
+  for (let c = 0; c < n; c++) {
+    pacStarts.push([0, c]);
+    atlStarts.push([m - 1, c]);
+  }
+  for (let r = 0; r < m; r++) {
+    pacStarts.push([r, 0]);
+    atlStarts.push([r, n - 1]);
+  }
+
+  const pac = bfs(pacStarts);
+  const atl = bfs(atlStarts);
+
+  const res = [];
+  for (let r = 0; r < m; r++) {
+    for (let c = 0; c < n; c++) {
+      if (pac[r][c] && atl[r][c]) res.push([r, c]);
+    }
+  }
+  return res;
 };
