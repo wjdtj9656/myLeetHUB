@@ -1,14 +1,12 @@
-/**
- * @param {string[]} words
- * @return {string[]}
- */
 var removeAnagrams = function(words) {
-  for (let i = 1; i < words.length;) {
-    const countWord = words[i].split('').sort().join()
-    const prevWord = words[i - 1].split('').sort().join()
-
-    countWord === prevWord ? words.splice(i, 1) : i++
+  const res = [];
+  let prev = "";
+  for (const w of words) {
+    const key = [...w].sort().join("");
+    if (key !== prev) {
+      res.push(w);
+      prev = key;
+    }
   }
-
-  return words    
+  return res;
 };
