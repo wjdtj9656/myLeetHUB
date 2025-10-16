@@ -1,0 +1,28 @@
+/**
+ * @param {number[]} nums
+ * @param {number} value
+ * @return {number}
+ */
+var findSmallestInteger = function(nums, value) {
+    // Step 1: Build frequency map of remainders
+    let freq = new Map();
+    for (let num of nums) {
+        // Normalize remainder to always be non-negative
+        let r = ((num % value) + value) % value;
+        freq.set(r, (freq.get(r) || 0) + 1);
+    }
+
+    // Step 2: Try to build MEX from 0 upwards
+    let i = 0;
+    while (true) {
+        let r = i % value;
+        if (freq.get(r) > 0) {
+            // Use one "ticket" from this remainder lane
+            freq.set(r, freq.get(r) - 1);
+            i++;
+        } else {
+            // First gap found → this is the MEX
+            return i;
+        }
+    }
+};
