@@ -3,20 +3,18 @@
  * @return {number}
  */
 var minDeletionSize = function(strs) {
-    const arr = Array.from(Array(strs.length),()=>new Array());
-    let answer = 0;
-    for(let i=0; i<strs.length; i++){
-        for(let j=0; j<strs[i].length; j++){
-            arr[i].push(strs[i][j]);
+    let count = 0;
+    const rows = strs.length;
+    const cols = strs[0].length;
+
+    for (let c = 0; c < cols; c++) {
+        for (let r = 0; r < rows - 1; r++) {
+            if (strs[r][c] > strs[r + 1][c]) {
+                count++;
+                break;
+            }
         }
     }
-    for(let i=0; i<arr[0].length; i++){
-        let temp = '';
-        for(let j=0; j<arr.length; j++){
-            temp += arr[j][i];
-        }
-        const str = temp;
-        str === temp.split('').sort().join('')? '':answer++;
-    }
-    return answer;
+
+    return count;
 };
