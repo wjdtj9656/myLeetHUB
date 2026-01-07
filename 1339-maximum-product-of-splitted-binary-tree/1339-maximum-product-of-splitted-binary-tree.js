@@ -1,9 +1,9 @@
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
+ * this.val = (val===undefined ? 0 : val)
+ * this.left = (left===undefined ? null : left)
+ * this.right = (right===undefined ? null : right)
  * }
  */
 /**
@@ -11,22 +11,25 @@
  * @return {number}
  */
 var maxProduct = function(root) {
+    const sums = [];
 
-    const result = [];
-    const mod  = 1e9 + 7;
-    let search = (node) =>{
-        if(!node) return 0;
-        if(!node.left && !node.right) return node.val;
-        let sumL = search(node.left);
-        let sumR = search(node.right);
-        result.push(sumL, sumR);
-        return sumL + sumR + node.val;
+    const getSum = (node) => {
+        if (!node) return 0;
+        const currentSum = node.val + getSum(node.left) + getSum(node.right);
+        sums.push(currentSum);
+        return currentSum;
+    };
+
+    const totalSum = BigInt(getSum(root));
+    let max = 0n;
+
+    for (const s of sums) {
+        const subSum = BigInt(s);
+        const currentProduct = subSum * (totalSum - subSum);
+        if (currentProduct > max) {
+            max = currentProduct;
+        }
     }
-    let sum = search(root);
-    let answer = 0;
-    for(let i=0; i<result.length; i++){
-        answer = Math.max(answer,result[i] *(sum-result[i]));
-    }
-    return answer % mod;
+
+    return Number(max % 1000000007n);
 };
-
