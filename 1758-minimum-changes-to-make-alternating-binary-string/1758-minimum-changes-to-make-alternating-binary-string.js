@@ -1,20 +1,19 @@
-var minOperations = function(s) {
-    let ch = s[0];
-    let cnt1 = count(s, ch);
-    let cnt2 = count(s, ch === '0' ? '1' : '0') + 1;
-    return Math.min(cnt1, cnt2);
-};
-
-const count = function(s, prev) {
-    let count = 0;
-    for (let i = 1; i < s.length; i++) {
-        let current = s[i];
-        if (current === prev) {
-            count++;
-            prev = prev === '0' ? '1' : '0';
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const minOperations = function(s) {
+    let count0 = 0;
+    
+    for (let i = 0; i < s.length; i++) {
+        if (i % 2 === 0) {
+            if (s[i] !== '0') count0++;
         } else {
-            prev = current;
+            if (s[i] !== '1') count0++;
         }
     }
-    return count;
+    
+    let count1 = s.length - count0;
+    
+    return Math.min(count0, count1);
 };
