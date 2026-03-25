@@ -1,0 +1,34 @@
+function checkPartition(grid) {
+  const m = grid.length;
+  const n = grid[0].length;
+  let totalSum = 0;
+  
+  const rowSums = new Array(m).fill(0);
+  const colSums = new Array(n).fill(0);
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      const val = grid[i][j];
+      totalSum += val;
+      rowSums[i] += val;
+      colSums[j] += val;
+    }
+  }
+
+  if (totalSum % 2 !== 0) return false;
+  const target = totalSum / 2;
+
+  let horizontalAccumulator = 0;
+  for (let i = 0; i < m - 1; i++) {
+    horizontalAccumulator += rowSums[i];
+    if (horizontalAccumulator === target) return true;
+  }
+
+  let verticalAccumulator = 0;
+  for (let j = 0; j < n - 1; j++) {
+    verticalAccumulator += colSums[j];
+    if (verticalAccumulator === target) return true;
+  }
+
+  return false;
+}
