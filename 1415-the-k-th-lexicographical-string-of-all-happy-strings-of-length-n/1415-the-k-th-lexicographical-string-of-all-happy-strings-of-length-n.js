@@ -1,20 +1,25 @@
 var getHappyString = function(n, k) {
-    let arr = [];
-	let char = ['a','b','c'];
-	const makeString = (index,str) =>{
-		if(index == n){
-			arr.push(str);
-			return;
-		}
-		for(let i=0; i<3; i++){
-			if(str.length > 0){
-				if(str[str.length-1] == char[i]){
-					continue;
-				}
-			}
-            makeString(index+1,str+char[i]);
-		}
-	}
-    makeString(0,"");
-	return arr[k-1]? arr[k-1]: "";
+    let count = 0;
+    let result = "";
+
+    const dfs = (current) => {
+        if (current.length === n) {
+            count++;
+            if (count === k) {
+                result = current;
+            }
+            return;
+        }
+
+        for (const char of ['a', 'b', 'c']) {
+            if (current.length === 0 || current[current.length - 1] !== char) {
+                if (result === "") {
+                    dfs(current + char);
+                }
+            }
+        }
+    };
+
+    dfs("");
+    return result;
 };
