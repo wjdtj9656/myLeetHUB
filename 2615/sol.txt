@@ -1,0 +1,39 @@
+var distance = function(nums) {
+    const map = new Map();
+    const n = nums.length;
+    
+    for (let i = 0; i < n; i++) {
+        if (!map.has(nums[i])) {
+            map.set(nums[i], { sum: 0, count: 0, indices: [] });
+        }
+        const data = map.get(nums[i]);
+        data.sum += i;
+        data.count += 1;
+        data.indices.push(i);
+    }
+
+    const arr = new Array(n).fill(0);
+
+    for (const data of map.values()) {
+        let leftSum = 0;
+        let leftCount = 0;
+        let rightSum = data.sum;
+        let rightCount = data.count;
+
+        for (let j = 0; j < data.indices.length; j++) {
+            const i = data.indices[j];
+            rightSum -= i;
+            rightCount -= 1;
+
+            const leftPart = (i * leftCount) - leftSum;
+            const rightPart = rightSum - (i * rightCount);
+            
+            arr[i] = leftPart + rightPart;
+
+            leftSum += i;
+            leftCount += 1;
+        }
+    }
+
+    return arr;
+};
