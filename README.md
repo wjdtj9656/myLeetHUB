@@ -18,6 +18,7 @@
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/wjdtj9656/myLeetHUB/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [1886-determine-whether-matrix-can-be-obtained-by-rotation](https://github.com/wjdtj9656/myLeetHUB/tree/main/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy |
+| [1914-cyclically-rotating-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/wjdtj9656/myLeetHUB/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2078-two-furthest-houses-with-different-colors](https://github.com/wjdtj9656/myLeetHUB/tree/main/2078-two-furthest-houses-with-different-colors/) | Easy |
@@ -66,6 +67,7 @@
 | [1727-largest-submatrix-with-rearrangements](https://github.com/wjdtj9656/myLeetHUB/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [1886-determine-whether-matrix-can-be-obtained-by-rotation](https://github.com/wjdtj9656/myLeetHUB/tree/main/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy |
+| [1914-cyclically-rotating-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2573-find-the-string-with-lcp](https://github.com/wjdtj9656/myLeetHUB/tree/main/2573-find-the-string-with-lcp/) | Hard |
 | [2906-construct-product-matrix](https://github.com/wjdtj9656/myLeetHUB/tree/main/2906-construct-product-matrix/) | Medium |
@@ -107,6 +109,7 @@
 | [0657-robot-return-to-origin](https://github.com/wjdtj9656/myLeetHUB/tree/main/0657-robot-return-to-origin/) | Easy |
 | [0874-walking-robot-simulation](https://github.com/wjdtj9656/myLeetHUB/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/wjdtj9656/myLeetHUB/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+| [1914-cyclically-rotating-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [2069-walking-robot-simulation-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/2069-walking-robot-simulation-ii/) | Medium |
 | [2075-decode-the-slanted-ciphertext](https://github.com/wjdtj9656/myLeetHUB/tree/main/2075-decode-the-slanted-ciphertext/) | Medium |
 | [2751-robot-collisions](https://github.com/wjdtj9656/myLeetHUB/tree/main/2751-robot-collisions/) | Hard |
