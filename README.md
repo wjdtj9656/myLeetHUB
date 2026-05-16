@@ -5,6 +5,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0048-rotate-image](https://github.com/wjdtj9656/myLeetHUB/tree/main/0048-rotate-image/) | Medium |
+| [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/wjdtj9656/myLeetHUB/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/wjdtj9656/myLeetHUB/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
@@ -171,6 +172,7 @@
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/wjdtj9656/myLeetHUB/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/wjdtj9656/myLeetHUB/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/wjdtj9656/myLeetHUB/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
