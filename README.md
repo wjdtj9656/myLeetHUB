@@ -29,6 +29,7 @@
 | [2515-shortest-distance-to-target-string-in-a-circular-array](https://github.com/wjdtj9656/myLeetHUB/tree/main/2515-shortest-distance-to-target-string-in-a-circular-array/) | Easy |
 | [2553-separate-the-digits-in-an-array](https://github.com/wjdtj9656/myLeetHUB/tree/main/2553-separate-the-digits-in-an-array/) | Easy |
 | [2573-find-the-string-with-lcp](https://github.com/wjdtj9656/myLeetHUB/tree/main/2573-find-the-string-with-lcp/) | Hard |
+| [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/wjdtj9656/myLeetHUB/tree/main/2657-find-the-prefix-common-array-of-two-arrays/) | Medium |
 | [2751-robot-collisions](https://github.com/wjdtj9656/myLeetHUB/tree/main/2751-robot-collisions/) | Hard |
 | [2906-construct-product-matrix](https://github.com/wjdtj9656/myLeetHUB/tree/main/2906-construct-product-matrix/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/wjdtj9656/myLeetHUB/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
@@ -145,6 +146,7 @@
 | [0874-walking-robot-simulation](https://github.com/wjdtj9656/myLeetHUB/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1345-jump-game-iv](https://github.com/wjdtj9656/myLeetHUB/tree/main/1345-jump-game-iv/) | Hard |
 | [1980-find-unique-binary-string](https://github.com/wjdtj9656/myLeetHUB/tree/main/1980-find-unique-binary-string/) | Medium |
+| [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/wjdtj9656/myLeetHUB/tree/main/2657-find-the-prefix-common-array-of-two-arrays/) | Medium |
 | [2840-check-if-strings-can-be-made-equal-with-operations-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/2840-check-if-strings-can-be-made-equal-with-operations-ii/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/wjdtj9656/myLeetHUB/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
@@ -171,6 +173,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1009-complement-of-base-10-integer](https://github.com/wjdtj9656/myLeetHUB/tree/main/1009-complement-of-base-10-integer/) | Easy |
+| [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/wjdtj9656/myLeetHUB/tree/main/2657-find-the-prefix-common-array-of-two-arrays/) | Medium |
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
