@@ -4,6 +4,7 @@
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/wjdtj9656/myLeetHUB/tree/main/0033-search-in-rotated-sorted-array/) | Medium |
 | [0048-rotate-image](https://github.com/wjdtj9656/myLeetHUB/tree/main/0048-rotate-image/) | Medium |
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/wjdtj9656/myLeetHUB/tree/main/0396-rotate-function/) | Medium |
@@ -177,6 +178,7 @@
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/wjdtj9656/myLeetHUB/tree/main/0033-search-in-rotated-sorted-array/) | Medium |
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/wjdtj9656/myLeetHUB/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/wjdtj9656/myLeetHUB/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
