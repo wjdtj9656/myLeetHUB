@@ -1,0 +1,22 @@
+function countSpecialChars(word) {
+    let lowerSet = new Set();
+    let upperSet = new Set();
+
+    for (let i = 0; i < word.length; i++) {
+        let char = word[i];
+        if (char >= 'a' && char <= 'z') {
+            lowerSet.add(char);
+        } else if (char >= 'A' && char <= 'Z') {
+            upperSet.add(char);
+        }
+    }
+
+    let count = 0;
+    for (let char of lowerSet) {
+        if (upperSet.has(char.toUpperCase())) {
+            count++;
+        }
+    }
+
+    return count;
+}
