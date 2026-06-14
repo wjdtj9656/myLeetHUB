@@ -255,6 +255,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/wjdtj9656/myLeetHUB/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/wjdtj9656/myLeetHUB/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3643-flip-square-submatrix-vertically](https://github.com/wjdtj9656/myLeetHUB/tree/main/3643-flip-square-submatrix-vertically/) | Easy |
 ## Enumeration
@@ -264,6 +265,7 @@
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [2751-robot-collisions](https://github.com/wjdtj9656/myLeetHUB/tree/main/2751-robot-collisions/) | Hard |
 ## Divide and Conquer
 | Problem Name | Difficulty |
@@ -303,4 +305,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/wjdtj9656/myLeetHUB/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 <!---LeetCode Topics End-->
