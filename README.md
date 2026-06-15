@@ -255,6 +255,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/wjdtj9656/myLeetHUB/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [2095-delete-the-middle-node-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2095-delete-the-middle-node-of-a-linked-list/) | Medium |
 | [2130-maximum-twin-sum-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/wjdtj9656/myLeetHUB/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3643-flip-square-submatrix-vertically](https://github.com/wjdtj9656/myLeetHUB/tree/main/3643-flip-square-submatrix-vertically/) | Easy |
@@ -308,5 +309,6 @@
 ## Linked List
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2095-delete-the-middle-node-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2095-delete-the-middle-node-of-a-linked-list/) | Medium |
 | [2130-maximum-twin-sum-of-a-linked-list](https://github.com/wjdtj9656/myLeetHUB/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 <!---LeetCode Topics End-->
