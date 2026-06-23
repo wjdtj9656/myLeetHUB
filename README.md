@@ -146,6 +146,7 @@
 | [3225-maximum-score-from-grid-operations](https://github.com/wjdtj9656/myLeetHUB/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/wjdtj9656/myLeetHUB/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/wjdtj9656/myLeetHUB/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
+| [3699-number-of-zigzag-arrays-i](https://github.com/wjdtj9656/myLeetHUB/tree/main/3699-number-of-zigzag-arrays-i/) | Hard |
 | [3742-maximum-path-score-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/3742-maximum-path-score-in-a-grid/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
@@ -181,6 +182,7 @@
 | [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/wjdtj9656/myLeetHUB/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 | [3225-maximum-score-from-grid-operations](https://github.com/wjdtj9656/myLeetHUB/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3548-equal-sum-grid-partition-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
+| [3699-number-of-zigzag-arrays-i](https://github.com/wjdtj9656/myLeetHUB/tree/main/3699-number-of-zigzag-arrays-i/) | Hard |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
