@@ -9,6 +9,7 @@
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/wjdtj9656/myLeetHUB/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/wjdtj9656/myLeetHUB/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/wjdtj9656/myLeetHUB/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1233-remove-sub-folders-from-the-filesystem](https://github.com/wjdtj9656/myLeetHUB/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [1345-jump-game-iv](https://github.com/wjdtj9656/myLeetHUB/tree/main/1345-jump-game-iv/) | Hard |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
@@ -93,6 +94,7 @@
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/wjdtj9656/myLeetHUB/tree/main/0657-robot-return-to-origin/) | Easy |
 | [0796-rotate-string](https://github.com/wjdtj9656/myLeetHUB/tree/main/0796-rotate-string/) | Easy |
+| [1233-remove-sub-folders-from-the-filesystem](https://github.com/wjdtj9656/myLeetHUB/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [1320-minimum-distance-to-type-a-word-using-two-fingers](https://github.com/wjdtj9656/myLeetHUB/tree/main/1320-minimum-distance-to-type-a-word-using-two-fingers/) | Hard |
 | [1415-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n](https://github.com/wjdtj9656/myLeetHUB/tree/main/1415-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/) | Medium |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/wjdtj9656/myLeetHUB/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
@@ -282,12 +284,14 @@
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1233-remove-sub-folders-from-the-filesystem](https://github.com/wjdtj9656/myLeetHUB/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/wjdtj9656/myLeetHUB/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/wjdtj9656/myLeetHUB/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1233-remove-sub-folders-from-the-filesystem](https://github.com/wjdtj9656/myLeetHUB/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/wjdtj9656/myLeetHUB/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
 ## Counting
 | Problem Name | Difficulty |
